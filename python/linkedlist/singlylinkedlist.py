@@ -33,7 +33,7 @@ class SinglyLinkedList:
         # O(n) linear time
         item = self._head
         if item is None:
-            self._head = Node(data)
+            self._head = self.Node(data)
         else:
             while item.next is not None:
                 item = item.next
