@@ -79,7 +79,7 @@ class DoublyLinkedList:
                 index = 0
                 while item.data != data:
                     if item.next is None:
-                        raise ValueError(f"Item: {data} not found in linked list")
+                        raise ValueError(f"Item: {data} not found")
                     else:
                         item = item.next
                         index += 1
@@ -88,7 +88,7 @@ class DoublyLinkedList:
                 index = self._size - 1
                 while item.data != data:
                     if item.previous is None:
-                        raise ValueError(f"Item: {data} not found in linked list")
+                        raise ValueError(f"Item: {data} not found")
                     else:
                         item = item.previous
                         index -= 1
@@ -166,7 +166,7 @@ class DoublyLinkedList:
                 new.previous = item
                 item.next = new
                 self._size += 1
-            
+
     def display(self):
         # O(n) linear time
         position = 0
@@ -175,7 +175,7 @@ class DoublyLinkedList:
             print(f"{position}: {item.data}")
             position += 1
             item = item.next
-        print(f"{position}: {item.data}\n")       
+        print(f"{position}: {item.data}\n")
 
 
 if __name__ == "__main__":

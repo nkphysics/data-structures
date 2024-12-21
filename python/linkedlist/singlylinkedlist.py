@@ -11,7 +11,7 @@ class SinglyLinkedList:
         # O(n) linear time
         state = False
         item = self._head
-        while state is False and item.next is not None:
+        while state is False and item is not None:
             if item.data == data:
                 state = True
             else:
@@ -53,8 +53,7 @@ class SinglyLinkedList:
         item = self._head
         if item is None:
             raise IndexError("Linked list is empty")
-        else: 
-            previous = 0
+        else:
             while item.next.next is not None:
                 item = item.next
             del item.next
@@ -75,7 +74,7 @@ class SinglyLinkedList:
                     item = item.next
                     index += 1
             return index
-    
+
     def get_data(self, index: int):
         # O(n) linear time
         item = self._head
@@ -118,7 +117,6 @@ class SinglyLinkedList:
         new = self.Node(data, item.next)
         item.next = new
 
-            
     def display(self):
         # O(n) linear time
         position = 0
@@ -127,7 +125,7 @@ class SinglyLinkedList:
             print(f"{position}: {item.data}")
             position += 1
             item = item.next
-        print(f"{position}: {item.data}\n")       
+        print(f"{position}: {item.data}\n")
 
 
 if __name__ == "__main__":
@@ -154,4 +152,3 @@ if __name__ == "__main__":
     ll.insert("blueberry", 1)
     ll.display()
     # ll.insert("blackberry", 10)
-
